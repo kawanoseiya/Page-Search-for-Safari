@@ -1,0 +1,18 @@
+/* Highlight styles injected into the searched page. */
+
+mark.pgs-highlight {
+    background-color: #ffe14d !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 2px !important;
+    box-shadow: none !important;
+    /* Keeps the match clear of sticky headers when scrolled into view. */
+    scroll-margin: 96px !important;
+}
+
+mark.pgs-highlight.pgs-current {
+    background-color: #ff8a1f !important;
+    color: #000000 !important;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.35) !important;
+}

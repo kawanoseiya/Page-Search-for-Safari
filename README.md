@@ -314,3 +314,53 @@ Safariで開いているページから、探したい文字をすばやく検�
 ユーザーが拡張を開いてから、検索を開始するまでに迷う要素を作らない。
 
 初期バージョンでは、設定画面を設けない。
+
+---
+
+## 22. 実装構成
+
+```text
+PageSearchForSafari/
+├── PageSearchForSafari.xcodeproj
+├── icon-source.svg              アイコンの原本（これを編集する）
+├── generate_icons.sh            全サイズのアイコンを再生成
+├── PageSearchForSafari/         アプリ本体（有効化ガイドを表示するだけ）
+│   ├── ViewController.swift     WKWebViewでガイドを表示・設定アプリを開く
+│   └── Resources/
+│       ├── Base.lproj/Main.html 英語のガイド
+│       ├── ja.lproj/Main.html   日本語のガイド
+│       ├── Main.js              「設定を開く」ボタンのブリッジ
+│       └── Style.css
+└── PageSearchForSafari Extension/
+    ├── SafariWebExtensionHandler.swift
+    └── Resources/
+        ├── manifest.json        Manifest V3
+        ├── popup.html/css/js    検索UI（入力欄・前後ボタン・件数・閉じる）
+        ├── content.js           テキスト走査・ハイライト・前後移動
+        ├── content.css          ハイライトの見た目
+        └── _locales/{en,ja}/messages.json
+```
+
+### 検索の仕組み
+
+1. `TreeWalker` で `document.body` のテキストノードを収集する。
+   `script` / `style` / `textarea` などのタグと、`display:none` などで非表示の要素は除外する。
+2. 収集したテキストを1本の文字列に連結し、各ノードの開始位置を記録する。
+3. 文字列長を変えない小文字化を行い、`indexOf` で全一致箇所を求める。
+4. 一致箇所を**後ろから順に** `<mark>` で囲む。前から囲むとテキストノードが分割され、
+   以降の位置がずれるため。
+5. 要素をまたぐ一致（例: `Wor<b>ld</b>`）は複数の `<mark>` になるが、1件として数える。
+6. 解除時は `<mark>` を外し、親ノードを `normalize()` して元のDOMに戻す。
+
+上限は2000件。極端に一般的な語でタブが固まるのを防ぐ。
+
+### ビルド
+
+```bash
+cd PageSearchForSafari
+xcodebuild -project PageSearchForSafari.xcodeproj -scheme PageSearchForSafari \
+  -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' \
+  CODE_SIGNING_ALLOWED=NO build
+```
+
+アイコンを変えるときは `icon-source.svg` を編集して `./generate_icons.sh` を実行する。

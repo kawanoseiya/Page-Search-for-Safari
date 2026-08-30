@@ -1,0 +1,22 @@
+:root {
+    color-scheme: light dark;
+}
+
+body {
+    margin: 0;
+    padding: 18px 20px;
+    min-width: 240px;
+    background: transparent;
+    color: #6b6b70;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    font-size: 15px;
+    text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+    body { color: #9c9ca1; }
+}
+
+#status {
+    margin: 0;
+}

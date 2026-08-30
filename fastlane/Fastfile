@@ -1,0 +1,18 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Upload screenshots to App Store Connect"
+  lane :upload_screenshots do
+    deliver(
+      api_key_path: "fastlane/api_key.json",
+      skip_binary_upload: true,
+      skip_metadata: true,
+      skip_screenshots: false,
+      skip_app_version_update: true,
+      overwrite_screenshots: true,
+      screenshots_path: "./screenshots_framed",
+      precheck_include_in_app_purchases: false,
+      force: true,
+    )
+  end
+end

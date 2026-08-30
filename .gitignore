@@ -1,0 +1,13 @@
+.DS_Store
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.ipa
+*.xcarchive
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/test_output/
+fastlane/api_key.json
+build/
+search_preview_*.png

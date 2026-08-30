@@ -1,0 +1,42 @@
+{
+    "extensionName": {
+        "message": "Page Search",
+        "description": "Name shown in the Safari extension list."
+    },
+    "extensionDescription": {
+        "message": "Quickly find text on the page you are reading.",
+        "description": "Short description of the extension."
+    },
+    "searchPlaceholder": {
+        "message": "Search keyword",
+        "description": "Placeholder of the search field."
+    },
+    "previousLabel": {
+        "message": "Previous match",
+        "description": "Accessibility label of the previous button."
+    },
+    "nextLabel": {
+        "message": "Next match",
+        "description": "Accessibility label of the next button."
+    },
+    "closeLabel": {
+        "message": "Close",
+        "description": "Accessibility label of the close button."
+    },
+    "expandLabel": {
+        "message": "Search this page",
+        "description": "Accessibility label of the collapsed magnifier bubble."
+    },
+    "listLabel": {
+        "message": "List of matches",
+        "description": "Accessibility label of the button that opens the list of hits."
+    },
+    "noResults": {
+        "message": "0 results",
+        "description": "Shown when nothing matched."
+    },
+    "unavailable": {
+        "message": "This page cannot be searched",
+        "description": "Shown when the content script cannot run on the page."
+    }
+}

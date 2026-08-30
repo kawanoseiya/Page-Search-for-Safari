@@ -1,0 +1,42 @@
+{
+    "extensionName": {
+        "message": "ページ内検索",
+        "description": "Name shown in the Safari extension list."
+    },
+    "extensionDescription": {
+        "message": "開いているページの中から、探したい文字をすばやく検索できます。",
+        "description": "Short description of the extension."
+    },
+    "searchPlaceholder": {
+        "message": "検索キーワード",
+        "description": "Placeholder of the search field."
+    },
+    "previousLabel": {
+        "message": "前の一致箇所",
+        "description": "Accessibility label of the previous button."
+    },
+    "nextLabel": {
+        "message": "次の一致箇所",
+        "description": "Accessibility label of the next button."
+    },
+    "closeLabel": {
+        "message": "閉じる",
+        "description": "Accessibility label of the close button."
+    },
+    "expandLabel": {
+        "message": "このページを検索",
+        "description": "Accessibility label of the collapsed magnifier bubble."
+    },
+    "listLabel": {
+        "message": "一致箇所の一覧",
+        "description": "Accessibility label of the button that opens the list of hits."
+    },
+    "noResults": {
+        "message": "0件",
+        "description": "Shown when nothing matched."
+    },
+    "unavailable": {
+        "message": "このページは検索できません",
+        "description": "Shown when the content script cannot run on the page."
+    }
+}
