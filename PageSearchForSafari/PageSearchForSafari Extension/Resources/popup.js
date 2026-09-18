@@ -51,6 +51,14 @@
             return inject();
         }, inject);
     }).then(function () {
-        window.close();
+        // 検索バーを開けた＝価値の瞬間。レビュー依頼の条件を満たしたときだけ
+        // popup を閉じずにバナーを出す（他の Safari 拡張と同じ型。通常は即閉じる）。
+        return reviewRecordUse()
+            .then(reviewShouldShow)
+            .then(function (show) {
+                if (!show) { window.close(); return; }
+                status.textContent = message("reviewPromptTitle");
+                return reviewMaybeShow(message);
+            }, function () { window.close(); });
     }).catch(fail);
 }());

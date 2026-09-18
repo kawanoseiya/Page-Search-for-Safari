@@ -38,5 +38,21 @@
     "unavailable": {
         "message": "このページは検索できません",
         "description": "Shown when the content script cannot run on the page."
+    },
+    "reviewPromptText": {
+        "message": "いつもご利用ありがとうございます。この拡張が役に立っていたら、レビューで応援していただけると励みになります。",
+        "description": "Review request banner in the popup."
+    },
+    "reviewWrite": {
+        "message": "レビューを書く",
+        "description": "Review request banner in the popup."
+    },
+    "reviewLater": {
+        "message": "また今度",
+        "description": "Review request banner in the popup."
+    },
+    "reviewPromptTitle": {
+        "message": "Page Search をご利用いただきありがとうございます",
+        "description": "Status line shown above the review banner."
     }
 }

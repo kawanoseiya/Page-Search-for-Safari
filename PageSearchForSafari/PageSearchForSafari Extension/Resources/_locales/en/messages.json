@@ -38,5 +38,21 @@
     "unavailable": {
         "message": "This page cannot be searched",
         "description": "Shown when the content script cannot run on the page."
+    },
+    "reviewPromptText": {
+        "message": "Thank you for using this extension! If it helps you, we'd be happy if you left a review.",
+        "description": "Review request banner in the popup."
+    },
+    "reviewWrite": {
+        "message": "Write a review",
+        "description": "Review request banner in the popup."
+    },
+    "reviewLater": {
+        "message": "Not now",
+        "description": "Review request banner in the popup."
+    },
+    "reviewPromptTitle": {
+        "message": "Thanks for using Page Search",
+        "description": "Status line shown above the review banner."
     }
 }
