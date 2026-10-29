@@ -54,5 +54,13 @@
     "reviewPromptTitle": {
         "message": "Page Search をご利用いただきありがとうございます",
         "description": "Status line shown above the review banner."
+    },
+    "barShown": {
+        "message": "検索ボタン（🔍）をページの左上に出しました。\nこの画面を閉じて 🔍 をタップしてください",
+        "description": "ポップアップ: 検索バーを出した後の案内（ポップアップが閉じなかったときに見える）"
+    },
+    "barHidden": {
+        "message": "検索バーを隠しました。この画面を閉じてください",
+        "description": "ポップアップ: 検索バーを隠した後の案内"
     }
 }

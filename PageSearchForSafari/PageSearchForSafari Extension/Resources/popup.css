@@ -2,15 +2,24 @@
     color-scheme: light dark;
 }
 
+/* iOS 27 の Safari は吹き出しで測った幅のままシートにも描くので、幅を固定して
+   iPhone Duo の閉じた外側（シート）でも中央に出す */
 body {
     margin: 0;
     padding: 18px 20px;
-    min-width: 240px;
+    box-sizing: border-box;
+    width: 400px;
+    overflow-x: hidden;
     background: transparent;
     color: #6b6b70;
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
     font-size: 15px;
     text-align: center;
+}
+
+/* 幅 375pt の iPhone（SE・mini）で右が切れないように */
+@media (max-device-width: 389px) {
+    body { width: 360px; }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,4 +28,5 @@ body {
 
 #status {
     margin: 0;
+    white-space: pre-line;
 }

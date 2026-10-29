@@ -54,5 +54,13 @@
     "reviewPromptTitle": {
         "message": "Thanks for using Page Search",
         "description": "Status line shown above the review banner."
+    },
+    "barShown": {
+        "message": "The search button (🔍) is now at the top left of the page.\nClose this and tap 🔍.",
+        "description": "Popup: shown after the search bar is added (visible only if the popup stays open)"
+    },
+    "barHidden": {
+        "message": "The search bar is hidden. You can close this.",
+        "description": "Popup: shown after the search bar is hidden"
     }
 }
